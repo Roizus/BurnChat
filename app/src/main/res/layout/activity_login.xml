@@ -77,7 +77,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/usernamefield"
+            android:id="@+id/usernameField"
             android:hint="@string/Username"
             android:layout_above="@+id/passwordField"
             android:layout_alignLeft="@+id/imageView"
