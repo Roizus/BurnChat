@@ -2,4 +2,14 @@
     <string name="app_name">BurnChat</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="signupButton">Sign up</string>
+    <string name="Username">Username</string>
+    <string name="Usernamefield">username</string>
+    <string name="title">BurnChat</string>
+    <string name="Subtitle">App</string>
+    <string name="passwordField">password</string>
+    <string name="empty_field_message">The field %1$s is empty.</string>
+    <string name="menu_logout_label">menu_logout_label</string>
+    <string name="loging_message">Logueado</string>
+    <string name="cancel">Cancel</string>
 </resources>
