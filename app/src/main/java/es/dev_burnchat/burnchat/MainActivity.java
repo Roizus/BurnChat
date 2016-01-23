@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
       });*/
 
         Intent intent = new Intent(this, LoginActivity.class);
+        intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);//Se crea una nueva pila
+        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);//Se elimina de la pila
         startActivity(intent);
       
     }
