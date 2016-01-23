@@ -16,6 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -59,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                       .setAction("Action", null).show();
           }
       });*/
+
+
 
         Intent intent = new Intent(this, LoginActivity.class);
         intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);//Se crea una nueva pila
