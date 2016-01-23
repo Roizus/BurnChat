@@ -1,11 +1,16 @@
 package es.dev_burnchat.burnchat;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -24,7 +29,9 @@ public class SignUpActivity extends AppCompatActivity {
         email=(EditText)findViewById(R.id.editText3);
     }
 
+
     public void onclickSignUp(View view){
+        ParseUser user = new ParseUser();
 
         String sName= String.valueOf(username.getText()).trim();
         String sPassword=String.valueOf(password.getText()).trim();
@@ -61,6 +68,30 @@ public class SignUpActivity extends AppCompatActivity {
             builder.setIcon(android.R.drawable.ic_dialog_alert);
             AlertDialog dialog=builder.create();
             dialog.show();
+        }
+        else{
+            user.setUsername(sName);
+            user.setPassword(sPassword);
+            user.setEmail(sEmail);
+            user.signUpInBackground(new SignUpCallback() {
+                public void done(ParseException e) {
+                    if (e == null) {
+                        Intent intent=new Intent(SignUpActivity.this,MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    } else {
+                        AlertDialog.Builder builder=new AlertDialog.Builder(SignUpActivity.this);
+                        String message = "No se ha podido crear el usuario";
+                        builder.setMessage(message);
+                        builder.setTitle("Erro SignUp");
+                        builder.setPositiveButton(android.R.string.ok, null);
+                        builder.setIcon(android.R.drawable.ic_dialog_alert);
+                        AlertDialog dialog=builder.create();
+                        dialog.show();
+                    }
+                }
+            });
+
         }
     }
 }
