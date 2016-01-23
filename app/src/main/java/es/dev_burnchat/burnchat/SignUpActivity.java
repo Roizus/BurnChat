@@ -83,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
                         AlertDialog.Builder builder=new AlertDialog.Builder(SignUpActivity.this);
                         String message = "No se ha podido crear el usuario";
                         builder.setMessage(message);
-                        builder.setTitle("Erro SignUp");
+                        builder.setTitle("Error SignUp");
                         builder.setPositiveButton(android.R.string.ok, null);
                         builder.setIcon(android.R.drawable.ic_dialog_alert);
                         AlertDialog dialog=builder.create();
