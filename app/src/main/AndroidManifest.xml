@@ -21,10 +21,13 @@
 
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity"
+            ></activity>
 
         <activity android:name=".SignUpActivity"
             android:screenOrientation="portrait"
+            android:parentActivityName=".LoginActivity"
             >
         </activity>
 
