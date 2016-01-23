@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.parse.Parse;
 import com.parse.ParseObject;
 
 public class MainActivity extends AppCompatActivity {
@@ -63,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
           }
       });*/
 
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
 
 
         Intent intent = new Intent(this, LoginActivity.class);

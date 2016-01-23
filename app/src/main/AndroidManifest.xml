@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.dev_burnchat.burnchat">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -35,10 +36,10 @@
 
         <meta-data
             android:name="com.parse.APPLICATION_ID"
-            android:value="nvj151LdtggeXWhhfp6KQ1mqMihjDxIm4atIwU0I" />
+            android:value="EDbBn6GA0CImxYdcD1WGFLXAHmJd1bZrldj26mXR" />
         <meta-data
             android:name="com.parse.CLIENT_KEY"
-            android:value="XzmuPJ5TvZwPrb1AoEr1eMsBcyt8vonQ3KYbk2nO" />
+            android:value="nVAtT2ZFfcLcCon4Fkou0JpBmlf73JO0F53faokY" />
 
     </application>
 
