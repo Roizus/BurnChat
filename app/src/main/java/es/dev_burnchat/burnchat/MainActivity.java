@@ -93,7 +93,13 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if(id==R.id.action_logout){
+            ParseUser.logOut();
+//OpenLoginActivity
+            Intent intent=new Intent(this,LoginActivity.class);
+//deletedeactivitystack
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             return true;
         }
 
