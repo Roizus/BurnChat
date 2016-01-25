@@ -7,4 +7,10 @@
         android:title="@string/action_logout"
         android:orderInCategory="100"
         app:showAsAction="never" />
+
+    <item android:id="@+id/action_camera"
+        android:icon="@drawable/ic_camera"
+        android:title="Camera"
+        app:showAsAction="ifRoom|withText" />
+
 </menu>
