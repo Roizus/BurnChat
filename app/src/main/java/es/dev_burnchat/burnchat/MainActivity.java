@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_inbox);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_friends);
 
       /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
       fab.setOnClickListener(new View.OnClickListener() {
@@ -129,10 +132,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
-        @Override
+       /* @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
@@ -143,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     return "SECTION 3";
             }
             return null;
-        }
+        }*/
     }
 
     /**
