@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".SignUpActivity ">
+
+
+    <item
+        android:id="@+id/miActionProgress"
+        android:title="@string/loging_message"
+        android:visible="false"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        app:actionLayout="@layout/action_view_progress"/>
+</menu>

@@ -25,11 +25,31 @@ public class LoginActivity extends AppCompatActivity {
 
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+       // getSupportActionBar().hide();
+        mSignupTextView=(TextView)findViewById(R.id.SignupButton);
+        mSignupTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        username=(EditText)findViewById(R.id.usernameField);
+        password=(EditText)findViewById(R.id.passwordField);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.login_activity,menu);
         return true ;
     }
+
+
 
     // Para iniciarlo, añadiremos el método onPrepareOptionsMenu
     @Override
@@ -44,40 +64,18 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void showProgressBar(){
-       //Show progress item.
+        //Show progress item.
         miActionProgressItem.setVisible(true);
-        }
+    }
 
 
 
     public void hideProgressBar() {
         //Hide progress item.
-        try {
-            miActionProgressItem.wait(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         miActionProgressItem.setVisible(false);
 
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
-        mSignupTextView=(TextView)findViewById(R.id.SignupButton);
-        mSignupTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this,SignUpActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        username=(EditText)findViewById(R.id.usernameField);
-        password=(EditText)findViewById(R.id.passwordField);
-    }
-
 
 
     public void onclickLogin(View view){
@@ -113,12 +111,12 @@ public class LoginActivity extends AppCompatActivity {
         }
         else{
             ParseUser.logInInBackground(sName, sPassword, new LogInCallback() {
+
                 public void done(ParseUser user, ParseException e) {
                     if (user != null) {
                         Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
-                        hideProgressBar();
                     } else {
                         AlertDialog.Builder builder=new AlertDialog.Builder(LoginActivity.this);
                         String message = "No se ha podido loguear el usuario";
@@ -129,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                         AlertDialog dialog=builder.create();
                         dialog.show();
                     }
+                    hideProgressBar();
 
                 }
             });
