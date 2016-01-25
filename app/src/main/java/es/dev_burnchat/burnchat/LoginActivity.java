@@ -4,9 +4,13 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.parse.LogInCallback;
@@ -17,7 +21,45 @@ public class LoginActivity extends AppCompatActivity {
     TextView mSignupTextView;
     EditText username;
     EditText password;
+    MenuItem miActionProgressItem;
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+// Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.login_activity,menu);
+        return true ;
+    }
+
+    // Para iniciarlo, añadiremos el método onPrepareOptionsMenu
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+// Store instance of the menu item containing progress
+        miActionProgressItem = menu.findItem(R.id.miActionProgress);
+// Extract the action-view from the menu item
+        ProgressBar v = (ProgressBar) MenuItemCompat.getActionView(miActionProgressItem);
+// Return to finish
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+
+    public void showProgressBar(){
+       //Show progress item.
+        miActionProgressItem.setVisible(true);
+        }
+
+
+
+    public void hideProgressBar() {
+        //Hide progress item.
+        try {
+            miActionProgressItem.wait(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        miActionProgressItem.setVisible(false);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +78,10 @@ public class LoginActivity extends AppCompatActivity {
         password=(EditText)findViewById(R.id.passwordField);
     }
 
-    public void onclickLogin(View view){
 
+
+    public void onclickLogin(View view){
+        showProgressBar();
         String sName= String.valueOf(username.getText()).trim();
         String sPassword=String.valueOf(password.getText()).trim();
 
@@ -53,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
             builder.setIcon(android.R.drawable.ic_dialog_alert);
             AlertDialog dialog=builder.create();
             dialog.show();
+
         }else if(sPassword.isEmpty()){
             AlertDialog.Builder builder=new AlertDialog.Builder(LoginActivity.this);
             String message =
@@ -63,6 +108,8 @@ public class LoginActivity extends AppCompatActivity {
             builder.setIcon(android.R.drawable.ic_dialog_alert);
             AlertDialog dialog=builder.create();
             dialog.show();
+
+
         }
         else{
             ParseUser.logInInBackground(sName, sPassword, new LogInCallback() {
@@ -71,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
+                        hideProgressBar();
                     } else {
                         AlertDialog.Builder builder=new AlertDialog.Builder(LoginActivity.this);
                         String message = "No se ha podido loguear el usuario";
@@ -81,10 +129,13 @@ public class LoginActivity extends AppCompatActivity {
                         AlertDialog dialog=builder.create();
                         dialog.show();
                     }
+
                 }
             });
 
+
         }
+
     }
 
 }
