@@ -27,7 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-       // getSupportActionBar().hide();
+       getSupportActionBar().hide();
 
         username=(EditText)findViewById(R.id.usernamefield);
         password=(EditText)findViewById(R.id.passwordfield);
@@ -70,6 +70,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
     public void onclickSignUp(View view){
         ParseUser user = new ParseUser();
+        getSupportActionBar().show();
         showProgressBar();
         String sName= String.valueOf(username.getText()).trim();
         String sPassword=String.valueOf(password.getText()).trim();

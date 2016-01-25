@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-       // getSupportActionBar().hide();
+       getSupportActionBar().hide();
         mSignupTextView=(TextView)findViewById(R.id.SignupButton);
         mSignupTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void onclickLogin(View view){
+        getSupportActionBar().show();
         showProgressBar();
         String sName= String.valueOf(username.getText()).trim();
         String sPassword=String.valueOf(password.getText()).trim();
