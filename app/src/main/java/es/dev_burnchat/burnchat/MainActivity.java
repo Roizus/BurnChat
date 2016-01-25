@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import com.parse.ParseUser;
 
+import static android.graphics.Color.parseColor;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -56,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_inbox);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_friends);
+        tabLayout.setSelectedTabIndicatorColor(parseColor("#FFFFFF"));
+        tabLayout.setBackgroundColor(parseColor("#64FE2E"));
+
+
+
+
+
 
       /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
       fab.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
           }
       });*/
 
+
+        
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
             Log.i("Usuario", String.valueOf(currentUser));
