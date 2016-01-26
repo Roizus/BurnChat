@@ -22,17 +22,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"
-            ></activity>
-
-        <activity android:name=".SignUpActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
             android:parentActivityName=".LoginActivity"
-            >
-        </activity>
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".EditFriendsActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"></activity>
 
         <meta-data
             android:name="com.parse.APPLICATION_ID"
@@ -40,6 +40,7 @@
         <meta-data
             android:name="com.parse.CLIENT_KEY"
             android:value="nVAtT2ZFfcLcCon4Fkou0JpBmlf73JO0F53faokY" />
+
 
     </application>
 
