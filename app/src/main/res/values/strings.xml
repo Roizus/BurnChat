@@ -12,4 +12,6 @@
     <string name="menu_logout_label">menu_logout_label</string>
     <string name="loging_message">Logueado</string>
     <string name="cancel">Cancel</string>
+    <string name="empty_inbox_label">No hay nuevos mensajes</string>
+    <string name="empty_friends_label">No tienes amigos</string>
 </resources>

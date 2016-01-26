@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
+        int TOTAL_PAGES=2;
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -126,13 +126,22 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            Fragment fragment = new Fragment();
+            switch (position) {
+                case 0:
+                    fragment= new InboxFragment();
+                    break;
+                case 1:
+                    fragment= new FriendsFragment();
+                    break;
+            }
+            return fragment;
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 2;
+            // Show 2 total pages.
+            return TOTAL_PAGES;
         }
 
        /* @Override
