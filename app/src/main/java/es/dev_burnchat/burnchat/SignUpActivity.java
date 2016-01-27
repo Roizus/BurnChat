@@ -64,7 +64,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void hideProgressBar() {
         //Hide progress item.
-
         miActionProgressItem.setVisible(false);
 
     }
