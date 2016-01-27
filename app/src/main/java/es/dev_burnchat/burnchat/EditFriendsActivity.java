@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import com.parse.FindCallback;
@@ -31,6 +32,7 @@ public class EditFriendsActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_friends);
         spinner=(ProgressBar) findViewById(R.id.progressBar2);
+        getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
     }
 
