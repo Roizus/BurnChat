@@ -76,14 +76,16 @@ public class EditFriendsActivity extends ListActivity {
 
 
     }
+
+
     @Override
-    protected  void onListItemClick(ListView l,View v,int position,long id)
-    {
-        super.onListItemClick(l,v,position,id);
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
         Context context = getApplicationContext();
         CharSequence text = "Amigo añadido!";
+        CharSequence text2 = "Amigo borrado!";
         int duration = Toast.LENGTH_SHORT;
-
 
         if (getListView().isItemChecked(position)) {
             // add the friend
@@ -91,12 +93,21 @@ public class EditFriendsActivity extends ListActivity {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
-        mCurrentUser.saveInBackground(new SaveCallback(){
-        @Override
-                public void done(ParseException e){
+        else {
+            // remove the friend
+            mFriendsRelation.remove(mUsers.get(position));
+            Toast toast = Toast.makeText(context, text2, duration);
+            toast.show();
         }
-    });
 
+        mCurrentUser.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, e.getMessage());
+                }
+            }
+        });
     }
 
     private void errorEditFriendsdDialog(String string) {
