@@ -2,12 +2,14 @@ package es.dev_burnchat.burnchat;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -51,7 +53,7 @@ public class EditFriendsActivity extends ListActivity {
             @Override
                     public void done(List<ParseUser>users,ParseException e){
                 if(e==null){
-//sucess
+                //sucess
                     mUsers=users;
                     for(ParseUser user:mUsers){
                         adapter.add(user.getUsername());
@@ -65,6 +67,18 @@ public class EditFriendsActivity extends ListActivity {
             }
         });
 
+
+    }
+    @Override
+    protected  void onListItemClick(ListView l,View v,int position,long id)
+    {
+        super.onListItemClick(l,v,position,id);
+        Context context = getApplicationContext();
+        CharSequence text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
 
     }
 
