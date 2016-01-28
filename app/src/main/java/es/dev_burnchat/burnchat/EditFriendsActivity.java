@@ -14,7 +14,9 @@ import android.widget.Toast;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseRelation;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,8 @@ public class EditFriendsActivity extends ListActivity {
     ArrayList<String> usernames;
     ArrayAdapter<String> adapter;
     ProgressBar spinner;
+    ParseRelation<ParseUser> mFriendsRelation;
+    private ParseUser mCurrentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,9 @@ public class EditFriendsActivity extends ListActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        mCurrentUser=ParseUser.getCurrentUser();
+        mFriendsRelation=mCurrentUser.getRelation(ParseConstants.FRIENDS_RELATION);
+
         //spinner.setVisibility(View.VISIBLE);
         usernames=new ArrayList<String>();
         adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked,usernames);
@@ -74,11 +81,21 @@ public class EditFriendsActivity extends ListActivity {
     {
         super.onListItemClick(l,v,position,id);
         Context context = getApplicationContext();
-        CharSequence text = "Hello toast!";
+        CharSequence text = "Amigo añadido!";
         int duration = Toast.LENGTH_SHORT;
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
+
+        if (getListView().isItemChecked(position)) {
+            // add the friend
+            mFriendsRelation.add(mUsers.get(position));
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+        mCurrentUser.saveInBackground(new SaveCallback(){
+        @Override
+                public void done(ParseException e){
+        }
+    });
 
     }
 
