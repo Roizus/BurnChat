@@ -3,6 +3,7 @@ package es.dev_burnchat.burnchat;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     MenuItem miActionProgressItem;
 
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +40,21 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(LoginActivity.this,SignUpActivity.class);
                 startActivity(intent);
+
             }
         });
 
         username=(EditText)findViewById(R.id.usernameField);
         password=(EditText)findViewById(R.id.passwordField);
+
+
+
+        TextView myTitle = (TextView)findViewById(R.id.title);
+        TextView mySubtitle = (TextView)findViewById(R.id.subtitle);
+        Typeface myFont = Typeface.createFromAsset(getAssets(),"font/leadcoat.ttf");
+        myTitle.setTypeface(myFont);
+        mySubtitle.setTypeface(myFont);
+
     }
 
     @Override
@@ -69,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
+//
     public void hideProgressBar() {
         //Hide progress item.
 

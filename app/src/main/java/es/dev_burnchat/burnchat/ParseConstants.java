@@ -6,4 +6,5 @@ package es.dev_burnchat.burnchat;
 public class ParseConstants {
     public static final String USERNAME = "username";
     public static final int MAX_USERS = 1000;
+    public static final String FRIENDS_RELATION = "friendsRelation";
 }
