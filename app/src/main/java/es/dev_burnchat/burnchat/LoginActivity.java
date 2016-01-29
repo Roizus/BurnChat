@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -48,12 +50,18 @@ public class LoginActivity extends AppCompatActivity {
         password=(EditText)findViewById(R.id.passwordField);
 
 
+        //añadimos el splash_screen
 
         TextView myTitle = (TextView)findViewById(R.id.title);
         TextView mySubtitle = (TextView)findViewById(R.id.subtitle);
         Typeface myFont = Typeface.createFromAsset(getAssets(),"font/leadcoat.ttf");
         myTitle.setTypeface(myFont);
         mySubtitle.setTypeface(myFont);
+
+
+        //añadir movimiento al titulo
+        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+        myTitle.startAnimation(shake);
 
     }
 
