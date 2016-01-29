@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         TextView myTitle = (TextView)findViewById(R.id.title);
         TextView mySubtitle = (TextView)findViewById(R.id.subtitle);
-        Typeface myFont = Typeface.createFromAsset(getAssets(), "font/leadcoat.ttf");
+        Typeface myFont = Typeface.createFromAsset(getAssets(),"font/leadcoat.ttf");
         myTitle.setTypeface(myFont);
         mySubtitle.setTypeface(myFont);
 
