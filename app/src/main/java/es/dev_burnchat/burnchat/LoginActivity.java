@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         mSignupTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this,SignUpActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
 
             }
@@ -51,9 +51,12 @@ public class LoginActivity extends AppCompatActivity {
 
         TextView myTitle = (TextView)findViewById(R.id.title);
         TextView mySubtitle = (TextView)findViewById(R.id.subtitle);
-        Typeface myFont = Typeface.createFromAsset(getAssets(), "font/leadcoat.ttf");
+        TextView MysignUp=(TextView)findViewById(R.id.SignupButton);
+        Typeface myFont = Typeface.createFromAsset(getAssets(),"font/leadcoat.ttf");
         myTitle.setTypeface(myFont);
         mySubtitle.setTypeface(myFont);
+        MysignUp.setTypeface(myFont);
+
 
     }
 
