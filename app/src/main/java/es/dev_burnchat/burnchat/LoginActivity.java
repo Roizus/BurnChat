@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
+//
     public void hideProgressBar() {
         //Hide progress item.
 
