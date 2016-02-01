@@ -17,7 +17,9 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_alignTop="@+id/imageView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:paddingTop="50dp" />
+
 
 
 
