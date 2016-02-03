@@ -8,7 +8,7 @@
 
 
 
-    <TextView
+   <!-- <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
@@ -16,10 +16,22 @@
         android:textSize="60sp"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_centerHorizontal="true" />
-
-
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+-->
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/logo"
+        android:layout_alignRight="@+id/title"
+        android:layout_alignEnd="@+id/title"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignStart="@+id/title"
+        android:layout_alignTop="@+id/title"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp" />
 
 
 </RelativeLayout>

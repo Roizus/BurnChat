@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/background"
+        android:src="@drawable/fondo_burn"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:scaleType="fitStart"/>
