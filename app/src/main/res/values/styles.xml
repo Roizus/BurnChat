@@ -40,9 +40,12 @@
 
 
     <style name="AuthBackground">
-        <item name="android:background">@drawable/background_fill</item>
+        <item name="android:background">@drawable/fondo_burn</item>
     </style>
 
+    <style name="papel">
+        <item name="android:background">@drawable/papel2</item>
+    </style>
 
 
 
@@ -51,7 +54,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:layout_alignParentTop">true</item>
-        <item name="android:background">@drawable/background</item>
+        <item name="android:background">@drawable/fondo_burn</item>
         <item name="android:scaleType">fitStart</item>
     </style>
 
