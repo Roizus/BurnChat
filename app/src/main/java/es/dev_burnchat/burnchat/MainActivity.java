@@ -3,6 +3,7 @@ package es.dev_burnchat.burnchat;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    public static final int TAKE_PHOTO_REQUEST = 0;
+    public static final int TAKE_VIDEO_REQUEST = 1;
+    public static final int PICK_PHOTO_REQUEST = 2;
+    public static final int PICK_VIDEO_REQUEST = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
                     switch(which) {
                         case 0: // Take picture
                             Log.d("Opción:", "0");
+                            Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
                             break;
                         case 1: // Take video
                             Log.d("Opción:", "1");
