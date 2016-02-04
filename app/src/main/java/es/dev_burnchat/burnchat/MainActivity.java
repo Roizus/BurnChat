@@ -1,5 +1,6 @@
 package es.dev_burnchat.burnchat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -118,8 +120,64 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    
-  
+*/
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+
+        switch(itemId) {
+            case R.id.action_logout:
+                ParseUser.logOut();
+                //OpenLoginActivity
+                Intent intent=new Intent(this,LoginActivity.class);
+                //deletedeactivitystack
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                //return true;
+                break;
+            case R.id.action_add_friends:
+                Intent intent2=new Intent(this,EditFriendsActivity.class);
+                //deletedeactivitystack
+                //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent2);
+                //return true;
+                break;
+            case R.id.action_camera:
+                dialogCameraChoices();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void dialogCameraChoices() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setItems(R.array.camera_choices, mDialogListener);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    protected DialogInterface.OnClickListener mDialogListener =
+            new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch(which) {
+                        case 0: // Take picture
+                            Log.d("Opción:", "0");
+                            break;
+                        case 1: // Take video
+                            Log.d("Opción:", "1");
+                            break;
+                        case 2: // Choose picture
+                            Log.d("Opción:", "2");
+                            break;
+                        case 3: // Choose video
+                            Log.d("Opción:", "3");
+                            break;
+                    }
+                }
+            };
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
