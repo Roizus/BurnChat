@@ -82,5 +82,5 @@ public class FriendsFragment extends ListFragment{
             }
         });
     }
-    }
+}
 
