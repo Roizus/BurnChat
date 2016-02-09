@@ -198,6 +198,17 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 1: // Take video
                             Log.d("Opción:", "1");
+                            Intent videoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                            mMediaUri = FileUtilities.getOutputMediaFileUri(FileUtilities.MEDIA_TYPE_VIDEO);
+                            if (mMediaUri == null) {
+                                Toast.makeText(MainActivity.this, R.string.error_external_storage, Toast.LENGTH_LONG).show();
+                            }
+                            else {
+                                videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
+                                videoIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 10);
+                                videoIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
+                                startActivityForResult(videoIntent, TAKE_VIDEO_REQUEST);
+                            }
                             break;
                         case 2: // Choose picture
                             Log.d("Opción:", "2");
