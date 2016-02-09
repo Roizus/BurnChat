@@ -29,12 +29,10 @@ public class FileUtilities {
             File appDir=null;
             switch(mediaType){
                 case MEDIA_TYPE_IMAGE:
-                appDir=Environment.
-                        getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+                appDir=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),appName);
                 break;
                 case MEDIA_TYPE_VIDEO:
-                appDir=Environment.
-                        getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES);
+                    appDir=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),appName);
                 break;
             }
 
