@@ -16,6 +16,7 @@
     <string name="empty_friends_label">No tienes amigos</string>
     <string name="error_message">No encontrados usuarios</string>
     <string name="error_external_storage">Error almacenamiento externo</string>
+    <string name="foto_error">Ha ocurrido un error</string>
 
     <string-array name="camera_choices">
         <item>Take Picture</item>
