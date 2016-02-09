@@ -2,6 +2,7 @@ package es.dev_burnchat.burnchat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
@@ -19,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseUser;
 
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int TAKE_VIDEO_REQUEST = 1;
     public static final int PICK_PHOTO_REQUEST = 2;
     public static final int PICK_VIDEO_REQUEST = 3;
+
+    protected Uri mMediaUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,7 +175,14 @@ public class MainActivity extends AppCompatActivity {
                         case 0: // Take picture
                             Log.d("Opción:", "0");
                             Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                            startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
+                            mMediaUri = FileUtilities.getOutputMediaFileUri(FileUtilities.MEDIA_TYPE_IMAGE);
+                            if (mMediaUri == null) {
+                                Toast.makeText(MainActivity.this, R.string.error_external_storage, Toast.LENGTH_LONG).show();
+                            }
+                            else{
+                                takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, mMediaUri);
+                                startActivityForResult(takePhotoIntent, TAKE_PHOTO_REQUEST);
+                            }
                             break;
                         case 1: // Take video
                             Log.d("Opción:", "1");
