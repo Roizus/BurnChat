@@ -17,6 +17,9 @@
     <string name="error_message">No encontrados usuarios</string>
     <string name="error_external_storage">Error almacenamiento externo</string>
     <string name="foto_error">Ha ocurrido un error</string>
+    <string name="error_video">error abriendo el video</string>
+    <string name="error_file_size_too_large">Video + 10mb</string>
+    <string name="video_aviso_tamaño">El video no puede superar los 10mb</string>
 
     <string-array name="camera_choices">
         <item>Take Picture</item>

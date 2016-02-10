@@ -24,6 +24,10 @@ import android.widget.Toast;
 
 import com.parse.ParseUser;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int PICK_VIDEO_REQUEST = 3;
 
     protected Uri mMediaUri;
+
+    public static final int FILE_SIZE_LIMIT = 1024*1024*10; // 10 MB
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +106,33 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, getString(R.string.foto_error), Toast.LENGTH_LONG).show();
                 } else {
                     mMediaUri = data.getData();
+                }
+                if (requestCode == PICK_VIDEO_REQUEST) {
+                    int fileSize = 0;
+                    InputStream inputStream = null;
+
+                    try {
+                        inputStream = getContentResolver().openInputStream(mMediaUri);
+                        fileSize = inputStream.available();
+                    }
+                    catch (FileNotFoundException e) {
+                        Toast.makeText(this, R.string.error_video, Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    catch (IOException e) {
+                        Toast.makeText(this, R.string.error_video, Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                    finally {
+                        try {
+                            inputStream.close();
+                        } catch (IOException e) { /* Intentionally blank */ }
+                    }
+
+                    if (fileSize >= FILE_SIZE_LIMIT) {
+                        Toast.makeText(this, R.string.error_file_size_too_large, Toast.LENGTH_LONG).show();
+                        return;
+                    }
                 }
             }
             else {
@@ -227,6 +260,10 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 3: // Choose video
                             Log.d("Opción:", "3");
+                            Intent chooseVideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                            chooseVideoIntent.setType("video/*");
+                            Toast.makeText(MainActivity.this, R.string.video_aviso_tamaño, Toast.LENGTH_LONG).show();
+                            startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
                             break;
                     }
                 }
