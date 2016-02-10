@@ -17,16 +17,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".Splash_Screen"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"
@@ -38,18 +37,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SignUpActivity"
             android:parentActivityName=".LoginActivity"
-            android:screenOrientation="portrait"></activity>
-
-        <activity android:name=".EditFriendsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditFriendsActivity"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.parse.APPLICATION_ID"
@@ -58,7 +56,10 @@
             android:name="com.parse.CLIENT_KEY"
             android:value="nVAtT2ZFfcLcCon4Fkou0JpBmlf73JO0F53faokY" />
 
-
+        <activity
+            android:name=".RecipientsActivity"
+            android:label="@string/title_activity_recipients"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

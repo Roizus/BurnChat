@@ -1,7 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="_AppTheme" parent="@style/AppTheme"/>
+    <style name="_AppTheme" parent="@style/AppTheme" />
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
         <!-- Customize your theme here. -->
@@ -46,7 +47,6 @@
     <style name="papel">
         <item name="android:background">@drawable/papel2</item>
     </style>
-
 
 
     <style name="ExtractStyleImage">
