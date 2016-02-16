@@ -8,7 +8,7 @@
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
     </ListView>
 
@@ -16,13 +16,6 @@
         android:id="@android:id/empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lista_receptores_vacia" />
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar3"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:text="@string/empty_friends_label" />
 
 </RelativeLayout>

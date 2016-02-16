@@ -29,5 +29,6 @@
     </string-array>
     <string name="title_activity_recipients">RecipientsActivity</string>
     <string name="lista_receptores_vacia">No existen receptores</string>
+    <string name="menu_send_label">Send</string>
 
 </resources>

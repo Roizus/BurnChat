@@ -5,6 +5,9 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -21,18 +24,22 @@ public class RecipientsActivity extends ListActivity {
 
 
     ProgressBar spinner;
+    MenuItem mSendMenuItem;
 
     public static final String TAG = FriendsFragment.class.getSimpleName();
 
     ParseRelation<ParseUser> mFriendsRelation;
     ParseUser mCurrentUser;
     List<ParseUser> mFriends;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipients);
-        spinner=(ProgressBar) findViewById(R.id.progressBar3);
+
+        //spinner=(ProgressBar) findViewById(R.id.progressBar3);
         getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        setupActionBar();
 
     }
 
@@ -78,6 +85,44 @@ public class RecipientsActivity extends ListActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.recipients, menu);
+        mSendMenuItem = menu.getItem(0);
+        return true;
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        if (l.getCheckedItemCount() > 0) {
+            mSendMenuItem.setVisible(true);
+        }
+        else {
+            //mSendMenuItem.setVisible(false);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_send:
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void setupActionBar() {
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
 

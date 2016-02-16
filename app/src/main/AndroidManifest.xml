@@ -59,7 +59,7 @@
         <activity
             android:name=".RecipientsActivity"
             android:label="@string/title_activity_recipients"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@android:style/Theme.Holo.Light" ></activity>
     </application>
 
 </manifest>
