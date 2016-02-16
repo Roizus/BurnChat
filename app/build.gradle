@@ -30,7 +30,7 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
-
+    compile files('src/main/libs/picasso-2.2.0.jar')
     }
 
 
