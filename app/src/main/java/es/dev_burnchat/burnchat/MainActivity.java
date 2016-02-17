@@ -96,18 +96,22 @@ public class MainActivity extends AppCompatActivity {
 
       
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (resultCode == RESULT_OK) {
             if (requestCode == PICK_PHOTO_REQUEST || requestCode == PICK_VIDEO_REQUEST) {
                 if (data == null) {
-                    Toast.makeText(this, getString(R.string.foto_error), Toast.LENGTH_LONG).show();
-                } else {
+                    Toast.makeText(this, getString(R.string.general_error), Toast.LENGTH_LONG).show();
+                }
+                else {
                     mMediaUri = data.getData();
                 }
+
+                Log.i("tag", "Media URI: " + mMediaUri);
                 if (requestCode == PICK_VIDEO_REQUEST) {
+                    // make sure the file is less than 10 MB
                     int fileSize = 0;
                     InputStream inputStream = null;
 
@@ -116,11 +120,11 @@ public class MainActivity extends AppCompatActivity {
                         fileSize = inputStream.available();
                     }
                     catch (FileNotFoundException e) {
-                        Toast.makeText(this, R.string.error_video, Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
                         return;
                     }
                     catch (IOException e) {
-                        Toast.makeText(this, R.string.error_video, Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, R.string.error_opening_file, Toast.LENGTH_LONG).show();
                         return;
                     }
                     finally {
@@ -140,14 +144,26 @@ public class MainActivity extends AppCompatActivity {
                 mediaScanIntent.setData(mMediaUri);
                 sendBroadcast(mediaScanIntent);
             }
+
             Intent recipientsIntent = new Intent(this, RecipientsActivity.class);
             recipientsIntent.setData(mMediaUri);
+
+            String fileType;
+            if (requestCode == PICK_PHOTO_REQUEST || requestCode == TAKE_PHOTO_REQUEST) {
+                fileType = ParseConstants.TYPE_IMAGE;
+            }
+            else {
+                fileType = ParseConstants.TYPE_VIDEO;
+            }
+
+            recipientsIntent.putExtra(ParseConstants.KEY_FILE_TYPE, fileType);
             startActivity(recipientsIntent);
         }
         else if (resultCode != RESULT_CANCELED) {
-            Toast.makeText(this, R.string.foto_error, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.general_error, Toast.LENGTH_LONG).show();
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -156,37 +172,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if(id==R.id.action_logout){
-            ParseUser.logOut();
-//OpenLoginActivity
-            Intent intent=new Intent(this,LoginActivity.class);
-//deletedeactivitystack
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            return true;
-        }
-        if(id==R.id.action_add_friends){
-
-            Intent intent=new Intent(this,EditFriendsActivity.class);
-//deletedeactivitystack
-
-            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -304,18 +290,7 @@ public class MainActivity extends AppCompatActivity {
             return TOTAL_PAGES;
         }
 
-       /* @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "SECTION 1";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
-        }*/
+       
     }
 
     /**
