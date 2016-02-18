@@ -59,7 +59,11 @@
         <activity
             android:name=".RecipientsActivity"
             android:label="@string/title_activity_recipients"
-            android:theme="@android:style/Theme.Holo.Light" ></activity>
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name=".ViewImageActivity"
+            android:label="@string/title_activity_view_image"
+            android:theme="@android:style/Theme.Holo.Light"></activity>
     </application>
 
 </manifest>

@@ -36,5 +36,6 @@
     <string name="general_error">error</string>
     <string name="error_opening_file">error abriendo archivo</string>
     <string name="action_send">Send</string>
+    <string name="title_activity_view_image">ViewImageActivity</string>
 
 </resources>
