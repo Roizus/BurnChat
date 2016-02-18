@@ -97,7 +97,15 @@ public class InboxFragment extends ListFragment{
             intent.setDataAndType(fileUri, "video/*");
             startActivity(intent);
         }
-    }
+        List<String> ids = message.getList(ParseConstants.KEY_RECIPIENT_IDS);
+
+        if (ids.size() == 1) {
+            message.deleteInBackground();
+        }
+        else {
+
+        }
+        }
 
     }
 
