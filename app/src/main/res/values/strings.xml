@@ -20,6 +20,7 @@
     <string name="error_video">error abriendo el video</string>
     <string name="error_file_size_too_large">Video + 10mb</string>
     <string name="video_aviso_tamaño">El video no puede superar los 10mb</string>
+    <string name="push_message">You have a new Ribbit message from: %s!</string>
 
     <string-array name="camera_choices">
         <item>Take Picture</item>

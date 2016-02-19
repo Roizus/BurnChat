@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class InboxFragment extends ListFragment{
     private ArrayList<String> messages;
     private ArrayAdapter adapter;
     protected List<ParseObject> mMessages;
+    protected SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,7 +39,12 @@ public class InboxFragment extends ListFragment{
         View rootView=inflater.inflate(R.layout.fragment_inbox,container,false);
         ProgressBar spinner=(ProgressBar) rootView.findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
+
+        mSwipeRefreshLayout =(SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
+        mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
         return rootView;
+
+
     }
 
     @Override
@@ -46,6 +53,10 @@ public class InboxFragment extends ListFragment{
 
         getActivity().setProgressBarIndeterminateVisibility(true);
 
+        retrieveMessages();
+    }
+
+    private void retrieveMessages() {
         ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(ParseConstants.CLASS_MESSAGES);
         query.whereEqualTo(ParseConstants.KEY_RECIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
         query.addDescendingOrder(ParseConstants.KEY_CREATED_AT);
@@ -53,6 +64,10 @@ public class InboxFragment extends ListFragment{
             @Override
             public void done(List<ParseObject> messages, ParseException e) {
                 getActivity().setProgressBarIndeterminateVisibility(false);
+
+                if(mSwipeRefreshLayout.isRefreshing()){
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
 
                 if (e == null) {
                     // We found messages!
@@ -113,5 +128,11 @@ public class InboxFragment extends ListFragment{
         }
         }
 
+    protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener(){
+        @Override
+        public void onRefresh(){
+            retrieveMessages();
+        }
+    };
     }
 

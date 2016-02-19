@@ -113,7 +113,9 @@ public class SignUpActivity extends AppCompatActivity {
             user.setEmail(sEmail);
             user.signUpInBackground(new SignUpCallback() {
                 public void done(ParseException e) {
-                    if (e == null) {
+                    if (e == null){
+
+
                         Intent intent=new Intent(SignUpActivity.this,MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
