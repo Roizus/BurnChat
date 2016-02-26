@@ -42,11 +42,12 @@ public class InboxFragment extends ListFragment{
 
         mSwipeRefreshLayout =(SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
         mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
+        mSwipeRefreshLayout.setColorScheme();
         return rootView;
 
 
     }
-
+//
     @Override
     public void onResume() {
         super.onResume();
@@ -80,9 +81,9 @@ public class InboxFragment extends ListFragment{
                         i++;
                     }
                     if (getListView().getAdapter() == null) {
-                        adapter=new
-                                ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,messages);
-                        setListAdapter(adapter);
+                        MessageAdapter adapter = new MessageAdapter(
+                                getListView().getContext(),
+                                mMessages);
                         setListAdapter(adapter);
                     }
 
