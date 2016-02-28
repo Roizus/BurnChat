@@ -15,7 +15,22 @@
         <item name="android:buttonStyle">@style/ButtonAppTheme</item>
 
         <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+        <item name="android:listViewStyle">@style/AppTheme.light_purple_background</item>
+        <item name="android:gridViewStyle">@style/AppTheme.light_purple_background.GridView</item>
+
+
     </style>
+
+    <style name="AppTheme.light_purple_background">
+        <item name="android:background">@color/light_purple_background</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <style name="AppTheme.light_purple_background.GridView">
+        <item name="android:padding">@dimen/user_grid_spacing</item>
+    </style>
+
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

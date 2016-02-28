@@ -38,5 +38,7 @@
     <string name="error_opening_file">error abriendo archivo</string>
     <string name="action_send">Send</string>
     <string name="title_activity_view_image">ViewImageActivity</string>
+    <string name="message_icon">Message icon</string>
+    <string name="content_desc_user_avatar">user avatar</string>
 
 </resources>
