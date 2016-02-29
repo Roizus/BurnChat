@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.parse.ParseUser;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ import java.util.List;
         protected List<ParseUser> mUsers;
 
         public UserAdapter(Context context, List<ParseUser> users) {
-            super(context, R.layout.message_item, users);
+            super(context, R.layout.user_item, users);
             mContext = context;
             mUsers = users;
         }
@@ -39,21 +38,25 @@ import java.util.List;
                 holder = (ViewHolder)convertView.getTag();
             }
 
-            ParseUser user = mUsers.get(position);
-            String email = user.getEmail().toLowerCase();
 
-            if(email.equals("")){
+
+
+            ParseUser user = mUsers.get(position);
+            /*String email = user.getEmail().toLowerCase();
+
+            if (email.equals("")) {
                 holder.userImageView.setImageResource(R.drawable.avatar_empty);
             }
             else {
                 String hash = MD5Util.md5Hex(email);
-                String gravatarUrl ="http://www.gravatar.com/avatar/" +hash + "d=monsterid";
+
+                String gravatarUrl = "http://www.gravatar.com/avatar/" + hash +
+                        "?s=204&d=404";
 
                 Picasso.with(mContext)
                         .load(gravatarUrl)
                         .placeholder(R.drawable.avatar_empty)
                         .into(holder.userImageView);
-
             }
 
 //		if (user.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.TYPE_IMAGE)) {
@@ -62,7 +65,11 @@ import java.util.List;
 //		else {
 //			holder.iconImageView.setImageResource(R.drawable.ic_video);
 //		}
+
+*/
             holder.nameLabel.setText(user.getUsername());
+
+
 
             return convertView;
         }

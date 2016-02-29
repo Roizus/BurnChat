@@ -35,7 +35,7 @@ public class FriendsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        View rootView=inflater.inflate(R.layout.fragment_friends,container,false);
+        View rootView=inflater.inflate(R.layout.user_grid,container,false);
         ProgressBar spinner=(ProgressBar) rootView.findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
 
