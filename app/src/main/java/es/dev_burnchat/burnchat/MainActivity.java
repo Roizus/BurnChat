@@ -254,6 +254,9 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, R.string.video_aviso_tamaño, Toast.LENGTH_LONG).show();
                             startActivityForResult(chooseVideoIntent, PICK_VIDEO_REQUEST);
                             break;
+                        case 4: // Send text message
+                            Toast.makeText(MainActivity.this, "Proximamente", Toast.LENGTH_LONG).show();
+                            break;
                     }
                 }
             };

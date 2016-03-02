@@ -27,6 +27,7 @@
         <item>Take Video</item>
         <item>Choose Picture</item>
         <item>Choose Video</item>
+        <item>Send Text Message</item>
     </string-array>
     <string name="title_activity_recipients">RecipientsActivity</string>
     <string name="lista_receptores_vacia">No existen receptores</string>
