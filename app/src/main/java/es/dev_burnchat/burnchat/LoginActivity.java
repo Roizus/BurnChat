@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -100,6 +101,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void onClick_url(View view){
+        Intent i=new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://github.com/Roizus/BurnChat"));
+        startActivity(i);
+    }
 
     public void onclickLogin(View view){
         getSupportActionBar().show();

@@ -6,4 +6,9 @@
     <color name="apptheme_color">#33b5e5</color>
     <color name="light_purple_background">#e9e4ed</color>
     <color name="light_gray">#D3D3D3</color>
+    <color name="light_purple_button">#E91E63</color>
+    <color name="pressed_purple_button">#E91E63</color>
+    <color name="focused_purple_button">#C2185B</color>
+    <color name="text_color">#250054</color>
+    <color name="com_facebook_blue">#3B5998</color>
 </resources>

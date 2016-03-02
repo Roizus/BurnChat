@@ -41,5 +41,10 @@
     <string name="title_activity_view_image">ViewImageActivity</string>
     <string name="message_icon">Message icon</string>
     <string name="content_desc_user_avatar">user avatar</string>
+    <string name="username_hint">Username (Case Sensitive)</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_label">LOG IN</string>
+    <string name="sign_up_text">Don\'t have an account? Sign Up!</string>
+    <string name="forgot_pw_text">Forgot Password</string>
 
 </resources>
