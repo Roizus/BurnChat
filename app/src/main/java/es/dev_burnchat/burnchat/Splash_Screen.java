@@ -18,7 +18,7 @@ public class Splash_Screen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash__screen);
-        sound = MediaPlayer.create(this, R.raw.sonido);
+        sound = MediaPlayer.create(this, R.raw.prev);
         sound.setLooping(true);
         sound.start();
         openApp(true);

@@ -46,5 +46,9 @@
     <string name="login_button_label">LOG IN</string>
     <string name="sign_up_text">Don\'t have an account? Sign Up!</string>
     <string name="forgot_pw_text">Forgot Password</string>
+    <string name="email_hint">email</string>
+    <string name="content_desc_button_divider">Button Divider</string>
+    <string name="sign_up_button_label">SIGN UP</string>
+    <string name="cancel_button_label">CANCEL</string>
 
 </resources>

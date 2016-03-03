@@ -7,51 +7,85 @@
     style="@style/AuthBackground">
 
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:id="@+id/title"
+        android:textSize="60sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Register!"
+        android:id="@+id/subtitle"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true" />
+    <requestFocus/>
+
+    <LinearLayout
+        android:id="@+id/editTextLayout"
+        style="@style/AuthFieldContainer">
+
+        <EditText
+            android:id="@+id/usernamefield"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/username_hint" >
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/passwordfield"
+            style="@style/AuthEditText"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/editText3"
+            style="@style/AuthEditText"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress" />
+    </LinearLayout>
+
     <ImageView
-        android:id="@+id/imageView"
-        style="@style/ExtractStyleImage" />
-
-
-    <EditText
-        android:id="@+id/usernamefield"
-        android:hint="username"
-        style="@style/extractEditText1" />
-
-    <EditText
-        android:id="@+id/passwordfield"
-        android:hint="password"
-        style="@style/ExtractEdittext2" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:hint="email"
-        style="@style/ExtractEdittext3" />
-
-
-<ImageView
-    android:id="@+id/buttondivider"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true" />
-
+        android:id="@+id/buttondivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+       />
 
     <Button
-    android:text="Sign Up"
-    android:id="@+id/signupbutton"
-    android:onClick="onclickSignUp"
-    android:layout_alignParentLeft="true"
+        android:id="@+id/signupbutton"
+        android:onClick="onclickSignUp"
+        style="@style/AuthButton"
+        android:text="@string/sign_up_button_label"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editTextLayout"
         android:layout_toLeftOf="@id/buttondivider"
         android:layout_marginRight="0dp"
-
-    style="@style/ExtractButton" />
+        />
 
     <Button
-        android:text="@string/cancel"
         android:id="@+id/cancel"
         android:onClick="onClickCancel"
-        style="@style/ExtractButton"
+        style="@style/AuthButton"
+        android:text="@string/cancel_button_label"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextLayout"
         android:layout_toRightOf="@id/buttondivider"
         android:layout_marginLeft="0dp"
-        android:nestedScrollingEnabled="true" />
 
+
+        />
 </RelativeLayout>

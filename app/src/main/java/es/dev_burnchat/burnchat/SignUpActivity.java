@@ -3,14 +3,19 @@ package es.dev_burnchat.burnchat;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -22,6 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText password;
     EditText email;
     MenuItem miActionProgressItem;
+    protected Button mCancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,23 @@ public class SignUpActivity extends AppCompatActivity {
         username=(EditText)findViewById(R.id.usernamefield);
         password=(EditText)findViewById(R.id.passwordfield);
         email=(EditText)findViewById(R.id.editText3);
+
+        TextView myTitle = (TextView)findViewById(R.id.title);
+        TextView mySubtitle = (TextView)findViewById(R.id.subtitle);
+        Typeface myFont = Typeface.createFromAsset(getAssets(),"font/leadcoat.ttf");
+        myTitle.setTypeface(myFont);
+        mySubtitle.setTypeface(myFont);
+
+        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+        myTitle.startAnimation(shake);
+
+        mCancelButton = (Button)findViewById(R.id.cancel);
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override
