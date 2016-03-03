@@ -6,7 +6,7 @@
     tools:context="es.dev_burnchat.burnchat.SignUpActivity"
     style="@style/AuthBackground">
 
-
+//--
 
     <TextView
         android:layout_width="wrap_content"
