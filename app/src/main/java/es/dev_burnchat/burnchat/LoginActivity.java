@@ -26,11 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     MenuItem miActionProgressItem;
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
