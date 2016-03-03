@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¡Register!"
+        android:text="Register"
         android:id="@+id/subtitle"
         android:textColor="@android:color/white"
         android:textSize="30sp"

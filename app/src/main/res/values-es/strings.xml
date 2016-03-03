@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BurnChat</string>
+    <string name="Subtitle">App</string>
+    <string name="Username">Usuario</string>
+    <string name="Usernamefield">Usuario</string>
+    <string name="action_logout">Quitar</string>
+    <string name="action_send">Enviar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="cancel_button_label">Cancelar</string>
+    <string name="content_desc_button_divider"> botón Divisor </string>
+    <string name="content_desc_user_avatar">Usuario avatar</string>
+    <string name="email_hint">correo</string>
+    <string name="empty_field_message">El campo esta vacio</string>
+    <string name="empty_friends_label">No tienes amigos</string>
+    <string name="empty_inbox_label">no tienes nuevos mensajes</string>
+    <string name="error_external_storage">Error almacenamiento externo</string>
+    <string name="error_message">No se encuentran usuarios</string>
+    <string name="error_file_size_too_large">Video + 10mb</string>
+    <string name="error_opening_file">Error abrir fichero</string>
+    <string name="error_selecting_file_title">Error de selección de archivos</string>
+    <string name="error_sending_message">mensaje no enviado</string>
+    <string name="error_video">Error al abrir el video</string>
+    <string name="forgot_pw_text">Se te olvidó tu contraseña</string>
+    <string name="foto_error">Se ha producido un error</string>
+    <string name="general_error">error</string>
+    <string name="lista_receptores_vacia">hay receptores</string>
+    <string name="login_button_label">INICIAR SESIÓN </string>
+    <string name="loging_message"> iniciar sesión</string>
+    <string name="menu_send_label">enviar</string>
+    <string name="message_icon">Icono mensaje</string>
+    <string name="passwordField">contraseña</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="push_message">Usted tiene un nuevo mensaje de Ribbit : % s !</string>
+    <string name="section_format">Hola mundo de la sección : % 1 $ d</string>
+    <string name="sign_up_button_label">REGÍSTRATE</string>
+    <string name="sign_up_text">¿No tienes una cuenta? Regístrate</string>
+    <string name="signupButton">registrate</string>
+    <string name="success_message">mensaje ok</string>
+    <string name="title">BurnChat</string>
+    <string name="title_activity_recipients">RecipientsActivity</string>
+    <string name="title_activity_view_image">ViewImageActivity</string>
+    <string name="username_hint">Nombre de usuario ( mayúsculas y minúsculas )</string>
+    <string name="video_aviso_tamaño">El vídeo no puede superar los 10 MB</string>
+    <string name="menu_logout_label">Registro</string>
+    <string name="Register">Registro</string>
+</resources>

@@ -10,16 +10,16 @@
     <string name="passwordField">password</string>
     <string name="empty_field_message">The field %1$s is empty.</string>
     <string name="menu_logout_label">menu_logout_label</string>
-    <string name="loging_message">Logueado</string>
+    <string name="loging_message">log in</string>
     <string name="cancel">Cancel</string>
-    <string name="empty_inbox_label">No hay nuevos mensajes</string>
-    <string name="empty_friends_label">No tienes amigos</string>
-    <string name="error_message">No encontrados usuarios</string>
-    <string name="error_external_storage">Error almacenamiento externo</string>
-    <string name="foto_error">Ha ocurrido un error</string>
-    <string name="error_video">error abriendo el video</string>
+    <string name="empty_inbox_label">no new post</string>
+    <string name="empty_friends_label">you dont have friends </string>
+    <string name="error_message">No users found </string>
+    <string name="error_external_storage">External Storage Error</string>
+    <string name="foto_error">An error has occurred</string>
+    <string name="error_video">Error opening the video</string>
     <string name="error_file_size_too_large">Video + 10mb</string>
-    <string name="video_aviso_tamaño">El video no puede superar los 10mb</string>
+    <string name="video_aviso_tamaño">The video can not exceed 10mb</string>
     <string name="push_message">You have a new Ribbit message from: %s!</string>
 
     <string-array name="camera_choices">
@@ -30,13 +30,13 @@
         <item>Send Text Message</item>
     </string-array>
     <string name="title_activity_recipients">RecipientsActivity</string>
-    <string name="lista_receptores_vacia">No existen receptores</string>
+    <string name="lista_receptores_vacia">There receptors </string>
     <string name="menu_send_label">Send</string>
-    <string name="success_message">mensaje ok</string>
-    <string name="error_sending_message">mensaje no enviado</string>
-    <string name="error_selecting_file_title">error seleccionando archivo</string>
+    <string name="success_message">message ok</string>
+    <string name="error_sending_message">unsent message </string>
+    <string name="error_selecting_file_title">selecting File Error </string>
     <string name="general_error">error</string>
-    <string name="error_opening_file">error abriendo archivo</string>
+    <string name="error_opening_file">Error opening file </string>
     <string name="action_send">Send</string>
     <string name="title_activity_view_image">ViewImageActivity</string>
     <string name="message_icon">Message icon</string>
@@ -50,5 +50,6 @@
     <string name="content_desc_button_divider">Button Divider</string>
     <string name="sign_up_button_label">SIGN UP</string>
     <string name="cancel_button_label">CANCEL</string>
+    <string name="Register">Register</string>
 
 </resources>
