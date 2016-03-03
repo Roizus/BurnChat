@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.dev_burnchat.burnchat.Splash_Screen"
+    style="@style/AuthBackground">
+
+
+
+   <!-- <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:id="@+id/title"
+        android:textSize="60sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+<<<<<<< Updated upstream
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+-->
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/imagen_logo"
+        android:layout_alignTop="@+id/title"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+=======
+        android:layout_alignTop="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="50dp" />
+
+
+
+>>>>>>> Stashed changes
+
+
+</RelativeLayout>
