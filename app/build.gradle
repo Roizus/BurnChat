@@ -30,7 +30,8 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
-
+    compile files('libs/commons-io-2.4.jar')
+    compile'com.squareup.picasso:picasso:2.5.0'
     }
 
 

@@ -42,44 +42,6 @@ public class EditFriendsActivity extends ListActivity {
 
     }
 
-  /* @Override
-    protected void onResume() {
-        super.onResume();
-        mCurrentUser=ParseUser.getCurrentUser();
-        mFriendsRelation=mCurrentUser.getRelation(ParseConstants.FRIENDS_RELATION);
-
-        ParseQuery query= ParseUser.getQuery();
-        query.orderByAscending(ParseConstants.USERNAME);
-        query.setLimit(ParseConstants.MAX_USERS);
-        query.findInBackground(new FindCallback<ParseUser>(){
-            @Override
-                    public void done(List<ParseUser>users,ParseException e){
-                if(e==null){
-                //sucess
-                    mUsers=users;
-                    String[] usernames = new String[mUsers.size()];
-                    int i = 0;
-                    for(ParseUser user:mUsers){
-                        //adapter.add(user.getUsername());
-                        usernames[i] = user.getUsername();
-                    }
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                            EditFriendsActivity.this,
-                            android.R.layout.simple_list_item_checked,
-                            usernames);
-                    setListAdapter(adapter);
-
-                    addFriendCheckmarks();
-                }
-                else{
-                    Log.e(TAG,"ParseExceptioncaught:",e);
-                    errorEditFriendsdDialog(getString(R.string.error_message));
-                }
-                spinner.setVisibility(View.INVISIBLE);
-            }
-        });
-
-    }*/
 
     @Override
     protected void onResume() {

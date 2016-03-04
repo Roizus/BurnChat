@@ -15,4 +15,40 @@
     <string name="empty_inbox_label">No hay nuevos mensajes</string>
     <string name="empty_friends_label">No tienes amigos</string>
     <string name="error_message">No encontrados usuarios</string>
+    <string name="error_external_storage">Error almacenamiento externo</string>
+    <string name="foto_error">Ha ocurrido un error</string>
+    <string name="error_video">error abriendo el video</string>
+    <string name="error_file_size_too_large">Video + 10mb</string>
+    <string name="video_aviso_tamaño">El video no puede superar los 10mb</string>
+    <string name="push_message">You have a new Ribbit message from: %s!</string>
+
+    <string-array name="camera_choices">
+        <item>Take Picture</item>
+        <item>Take Video</item>
+        <item>Choose Picture</item>
+        <item>Choose Video</item>
+        <item>Send Text Message</item>
+    </string-array>
+    <string name="title_activity_recipients">RecipientsActivity</string>
+    <string name="lista_receptores_vacia">No existen receptores</string>
+    <string name="menu_send_label">Send</string>
+    <string name="success_message">mensaje ok</string>
+    <string name="error_sending_message">mensaje no enviado</string>
+    <string name="error_selecting_file_title">error seleccionando archivo</string>
+    <string name="general_error">error</string>
+    <string name="error_opening_file">error abriendo archivo</string>
+    <string name="action_send">Send</string>
+    <string name="title_activity_view_image">ViewImageActivity</string>
+    <string name="message_icon">Message icon</string>
+    <string name="content_desc_user_avatar">user avatar</string>
+    <string name="username_hint">Username (Case Sensitive)</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_label">LOG IN</string>
+    <string name="sign_up_text">Don\'t have an account? Sign Up!</string>
+    <string name="forgot_pw_text">Forgot Password</string>
+    <string name="email_hint">email</string>
+    <string name="content_desc_button_divider">Button Divider</string>
+    <string name="sign_up_button_label">SIGN UP</string>
+    <string name="cancel_button_label">CANCEL</string>
+
 </resources>

@@ -15,10 +15,12 @@ public class BurnApplication extends Application{
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(this);
+    }
 
           /*ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
         testObject.saveInBackground();
         */
+
+
     }
-}
